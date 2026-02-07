@@ -1,0 +1,811 @@
+/**
+ * СТИЛИ ДЛЯ РАСШИРЕННЫХ МОДУЛЕЙ
+ * Практики, Род, Прогноз
+ */
+
+/* ========================================
+   ОБЩИЕ СТИЛИ
+======================================== */
+.stub-message {
+    padding: 40px;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(59, 130, 246, 0.1));
+    border-radius: 16px;
+    border: 2px dashed rgba(139, 92, 246, 0.3);
+}
+
+.stub-message h3 {
+    color: #8b5cf6;
+    font-size: 24px;
+    margin-bottom: 16px;
+}
+
+.stub-message ul {
+    text-align: left;
+    max-width: 500px;
+    margin: 20px auto;
+    padding-left: 20px;
+}
+
+.stub-message ul li {
+    margin: 8px 0;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.info-text {
+    padding: 30px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+    font-style: italic;
+}
+
+/* ========================================
+   ПРАКТИКИ
+======================================== */
+.practices-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.practices-section {
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-desc {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.practice-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+    border-left: 4px solid;
+    transition: all 0.3s ease;
+}
+
+.practice-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateX(4px);
+}
+
+.practice-card.priority-urgent {
+    border-left-color: #ef4444;
+    background: rgba(239, 68, 68, 0.1);
+}
+
+.practice-card.priority-recommended {
+    border-left-color: #8b5cf6;
+    background: rgba(139, 92, 246, 0.1);
+}
+
+.practice-card.priority-supportive {
+    border-left-color: #3b82f6;
+    background: rgba(59, 130, 246, 0.1);
+}
+
+.practice-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.practice-title {
+    font-size: 18px;
+    color: #fff;
+    margin: 0;
+}
+
+.practice-duration {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.practice-desc {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 16px;
+    line-height: 1.6;
+}
+
+.practice-details {
+    margin-top: 16px;
+}
+
+.btn-expand {
+    width: 100%;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.btn-expand:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.practice-list {
+    margin-top: 16px;
+}
+
+.single-practice {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.single-practice h5 {
+    color: #8b5cf6;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.practice-info {
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.practice-meta {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 12px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.practice-steps {
+    margin-top: 12px;
+}
+
+.practice-steps strong {
+    color: #8b5cf6;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.practice-steps ol {
+    padding-left: 20px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.practice-steps ol li {
+    margin: 6px 0;
+    line-height: 1.5;
+}
+
+.practice-text {
+    margin-top: 16px;
+    padding: 16px;
+    background: rgba(139, 92, 246, 0.1);
+    border-radius: 8px;
+    border-left: 3px solid #8b5cf6;
+}
+
+.practice-text strong {
+    color: #8b5cf6;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.practice-text blockquote {
+    margin: 0;
+    padding: 0;
+    color: rgba(255, 255, 255, 0.9);
+    font-style: italic;
+    line-height: 1.8;
+}
+
+/* ========================================
+   РОДОВЫЕ ПРОГРАММЫ
+======================================== */
+.ancestral-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.ancestral-section {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 20px;
+}
+
+.ancestral-section h3 {
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 16px;
+}
+
+.ancestral-desc {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.ancestral-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.ancestral-item {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    border-radius: 8px;
+}
+
+.ancestral-item strong {
+    color: #8b5cf6;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.ancestral-item p {
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+    line-height: 1.5;
+}
+
+.state-indicator {
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 4px solid;
+}
+
+.state-indicator.high {
+    border-left-color: #ef4444;
+    background: rgba(239, 68, 68, 0.1);
+}
+
+.state-indicator.medium {
+    border-left-color: #f59e0b;
+    background: rgba(245, 158, 11, 0.1);
+}
+
+.state-indicator.low {
+    border-left-color: #10b981;
+    background: rgba(16, 185, 129, 0.1);
+}
+
+.state-indicator strong {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #fff;
+}
+
+.state-indicator p {
+    color: rgba(255, 255, 255, 0.8);
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
+.state-indicator .recommendation {
+    color: rgba(255, 255, 255, 0.9);
+    font-style: italic;
+    margin-top: 12px;
+}
+
+.severity-critical {
+    color: #ef4444;
+    margin-top: 20px;
+    margin-bottom: 12px;
+    font-size: 16px;
+}
+
+.severity-high {
+    color: #f59e0b;
+    margin-top: 20px;
+    margin-bottom: 12px;
+    font-size: 16px;
+}
+
+.severity-medium {
+    color: #fbbf24;
+    margin-top: 20px;
+    margin-bottom: 12px;
+    font-size: 16px;
+}
+
+.program-card {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    border-left: 4px solid;
+}
+
+.program-card.severity-critical {
+    border-left-color: #ef4444;
+}
+
+.program-card.severity-high {
+    border-left-color: #f59e0b;
+}
+
+.program-card.severity-medium {
+    border-left-color: #fbbf24;
+}
+
+.program-card h5 {
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.program-desc {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+.program-origin,
+.program-impact,
+.program-healing {
+    color: rgba(255, 255, 255, 0.7);
+    margin: 8px 0;
+    line-height: 1.5;
+    font-size: 14px;
+}
+
+.program-origin strong,
+.program-impact strong,
+.program-healing strong {
+    color: #8b5cf6;
+}
+
+.program-signs {
+    margin: 12px 0;
+}
+
+.program-signs strong {
+    color: #8b5cf6;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.program-signs ul {
+    padding-left: 20px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.program-signs ul li {
+    margin: 4px 0;
+}
+
+.strength-card,
+.task-card {
+    background: rgba(139, 92, 246, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    border-left: 4px solid #8b5cf6;
+}
+
+.strength-card h4,
+.task-card h4 {
+    color: #8b5cf6;
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.strength-card p,
+.task-card p {
+    color: rgba(255, 255, 255, 0.8);
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
+.strength-card .usage {
+    color: rgba(255, 255, 255, 0.9);
+    font-style: italic;
+    margin-top: 12px;
+}
+
+.task-steps {
+    padding-left: 20px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.task-steps li {
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
+.exclusions-desc {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 16px;
+    line-height: 1.6;
+}
+
+.exclusions-types {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    border-radius: 8px;
+    margin: 16px 0;
+}
+
+.exclusions-types strong {
+    color: #8b5cf6;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.exclusions-types ul {
+    padding-left: 20px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.exclusions-types ul li {
+    margin: 6px 0;
+}
+
+.exclusions-impact {
+    color: rgba(255, 255, 255, 0.8);
+    margin: 16px 0;
+    line-height: 1.5;
+}
+
+.healing-practice {
+    background: rgba(139, 92, 246, 0.15);
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+    border: 2px solid rgba(139, 92, 246, 0.3);
+}
+
+.healing-practice h4 {
+    color: #8b5cf6;
+    margin-bottom: 12px;
+}
+
+.healing-practice p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 16px;
+}
+
+.healing-practice ol {
+    padding-left: 20px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.healing-practice ol li {
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
+.practice-recommend {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    position: relative;
+}
+
+.practice-recommend strong {
+    color: #fff;
+    font-size: 16px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.priority-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.priority-badge.critical {
+    background: #ef4444;
+    color: #fff;
+}
+
+.priority-badge.high {
+    background: #f59e0b;
+    color: #fff;
+}
+
+.priority-badge.medium {
+    background: #3b82f6;
+    color: #fff;
+}
+
+/* ========================================
+   ПРОГНОЗ
+======================================== */
+.forecast-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.forecast-year,
+.forecast-month,
+.favorable-days {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 24px;
+}
+
+.forecast-year h3,
+.forecast-month h3,
+.favorable-days h3 {
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 16px;
+}
+
+.year-number,
+.month-number {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #8b5cf6, #3b82f6);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    margin: 16px 0;
+}
+
+.year-desc,
+.month-desc {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin: 16px 0;
+}
+
+.year-energy,
+.year-keywords,
+.year-tasks,
+.year-recommendations,
+.year-timing,
+.month-tasks,
+.month-opportunities,
+.month-warnings {
+    margin: 24px 0;
+}
+
+.year-energy h4,
+.year-keywords h4,
+.year-tasks h4,
+.year-recommendations h4,
+.year-timing h4,
+.month-tasks h4,
+.month-opportunities h4,
+.month-warnings h4 {
+    color: #8b5cf6;
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.energy-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.energy-grid span {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 12px;
+    border-radius: 8px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+}
+
+.energy-grid strong {
+    color: #8b5cf6;
+}
+
+.keywords-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.keyword-badge {
+    background: rgba(139, 92, 246, 0.2);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+.year-tasks ul,
+.month-tasks ul,
+.month-opportunities ul,
+.month-warnings ul {
+    padding-left: 20px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.year-tasks ul li,
+.month-tasks ul li,
+.month-opportunities ul li,
+.month-warnings ul li {
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
+.rec-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.do-list,
+.dont-list {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    border-radius: 8px;
+}
+
+.do-list strong {
+    color: #10b981;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.dont-list strong {
+    color: #ef4444;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.do-list ul,
+.dont-list ul {
+    padding-left: 20px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.do-list ul li,
+.dont-list ul li {
+    margin: 6px 0;
+}
+
+.year-timing p {
+    color: rgba(255, 255, 255, 0.8);
+    margin: 8px 0;
+}
+
+.year-timing strong {
+    color: #8b5cf6;
+}
+
+.month-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 16px 0;
+}
+
+.month-name {
+    font-size: 18px;
+    color: #8b5cf6;
+    font-weight: 600;
+}
+
+.favorable-months h4 {
+    color: #8b5cf6;
+    margin: 20px 0 12px 0;
+}
+
+.months-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 12px;
+}
+
+.month-card {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    border-radius: 8px;
+    text-align: center;
+    border: 2px solid;
+}
+
+.month-card.favorable {
+    border-color: rgba(16, 185, 129, 0.3);
+    background: rgba(16, 185, 129, 0.1);
+}
+
+.month-card .month-name {
+    display: block;
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.month-card .month-number {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #8b5cf6, #3b82f6);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    margin: 8px auto;
+}
+
+.month-reason {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+    margin-top: 8px;
+    line-height: 1.4;
+}
+
+.peak-period {
+    background: rgba(139, 92, 246, 0.15);
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+    border: 2px solid rgba(139, 92, 246, 0.3);
+}
+
+.peak-period h4 {
+    color: #8b5cf6;
+    margin-bottom: 12px;
+}
+
+.peak-period p {
+    color: rgba(255, 255, 255, 0.8);
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
+/* ========================================
+   АДАПТИВНОСТЬ
+======================================== */
+@media (max-width: 768px) {
+    .ancestral-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .rec-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .forecast-layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .months-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

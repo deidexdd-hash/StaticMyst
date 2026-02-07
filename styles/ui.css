@@ -1,0 +1,649 @@
+/**
+ * PREMIUM UI COMPONENTS
+ * Красивые компоненты для практик, планов, Рода и прогнозов
+ */
+
+/* ============================================
+   ПРАКТИКИ - Карточная система
+   ============================================ */
+
+.practices-premium-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.practice-card-premium {
+    background: var(--bg-elevated);
+    border-radius: 16px;
+    padding: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.practice-card-premium::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.practice-card-premium:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-primary);
+    box-shadow: 0 12px 40px rgba(99, 102, 241, 0.2);
+}
+
+.practice-card-premium:hover::before {
+    opacity: 1;
+}
+
+.practice-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.practice-icon-large {
+    font-size: 32px;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(99, 102, 241, 0.1);
+    border-radius: 12px;
+}
+
+.practice-meta {
+    flex: 1;
+}
+
+.practice-title-large {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.practice-badges {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.practice-badge {
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.badge-duration {
+    background: rgba(59, 130, 246, 0.15);
+    color: #60a5fa;
+}
+
+.badge-difficulty {
+    background: rgba(245, 158, 11, 0.15);
+    color: #fbbf24;
+}
+
+.badge-difficulty.easy { background: rgba(16, 185, 129, 0.15); color: #34d399; }
+.badge-difficulty.hard { background: rgba(239, 68, 68, 0.15); color: #f87171; }
+
+.practice-description {
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.practice-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.practice-priority {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+}
+
+.priority-high { color: #ef4444; }
+.priority-medium { color: #f59e0b; }
+.priority-low { color: #6b7280; }
+
+/* ============================================
+   ПЛАНЫ - Прогресс и чек-листы
+   ============================================ */
+
+.plan-item-premium {
+    background: var(--bg-card);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 12px;
+    border-left: 4px solid transparent;
+    transition: all 0.3s;
+}
+
+.plan-item-premium.priority-high {
+    border-left-color: var(--danger);
+}
+
+.plan-item-premium.priority-medium {
+    border-left-color: var(--warning);
+}
+
+.plan-item-premium.completed {
+    opacity: 0.6;
+    background: rgba(16, 185, 129, 0.1);
+}
+
+.plan-item-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 12px;
+}
+
+.plan-checkbox {
+    width: 24px;
+    height: 24px;
+    border-radius: 8px;
+    border: 2px solid var(--accent-primary);
+    cursor: pointer;
+    transition: all 0.2s;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.plan-checkbox:hover {
+    background: rgba(99, 102, 241, 0.1);
+    transform: scale(1.1);
+}
+
+.plan-checkbox.checked {
+    background: var(--accent-primary);
+}
+
+.plan-checkbox.checked::after {
+    content: '✓';
+    color: white;
+    font-size: 14px;
+}
+
+.plan-item-content {
+    flex: 1;
+}
+
+.plan-item-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.plan-item-description {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.plan-progress-bar {
+    height: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.plan-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+    border-radius: 3px;
+    transition: width 0.5s ease;
+}
+
+.plan-stats-card {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+.plan-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 20px;
+}
+
+.plan-stat-item {
+    text-align: center;
+}
+
+.plan-stat-value {
+    font-size: 32px;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-tertiary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 4px;
+}
+
+.plan-stat-label {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+/* ============================================
+   РОДОВЫЕ ПРОГРАММЫ - Древо и анализ
+   ============================================ */
+
+.ancestral-tree {
+    background: radial-gradient(circle at center, rgba(99, 102, 241, 0.05), transparent);
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 30px;
+}
+
+.tree-generation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.tree-generation::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 40px;
+    background: linear-gradient(180deg, var(--accent-primary), transparent);
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.tree-generation:last-child::after {
+    display: none;
+}
+
+.tree-node {
+    background: var(--bg-elevated);
+    border: 2px solid var(--accent-primary);
+    border-radius: 12px;
+    padding: 16px 24px;
+    margin: 0 8px;
+    text-align: center;
+    position: relative;
+}
+
+.tree-node-level {
+    font-size: 12px;
+    color: var(--accent-primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+.tree-node-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.tree-node-count {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+.program-card {
+    background: var(--bg-card);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 16px;
+    border-left: 4px solid;
+}
+
+.program-card.severity-high {
+    border-left-color: var(--danger);
+    background: rgba(239, 68, 68, 0.05);
+}
+
+.program-card.severity-medium {
+    border-left-color: var(--warning);
+    background: rgba(245, 158, 11, 0.05);
+}
+
+.program-card.severity-low {
+    border-left-color: var(--info);
+    background: rgba(6, 182, 212, 0.05);
+}
+
+.program-type {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.program-type.power { background: rgba(239, 68, 68, 0.15); color: #f87171; }
+.program-type.money { background: rgba(245, 158, 11, 0.15); color: #fbbf24; }
+.program-type.exclusion { background: rgba(139, 92, 246, 0.15); color: #a78bfa; }
+
+.program-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+}
+
+.program-description {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+.program-signs {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.program-signs-title {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+.program-signs-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.sign-tag {
+    padding: 6px 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+/* ============================================
+   ПРОГНОЗЫ - Календарь и циклы
+   ============================================ */
+
+.forecast-year-card {
+    background: linear-gradient(135deg, 
+        rgba(99, 102, 241, 0.15) 0%, 
+        rgba(139, 92, 246, 0.15) 100%);
+    border-radius: 20px;
+    padding: 32px;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+}
+
+.forecast-year-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.05), transparent);
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.forecast-year-number {
+    font-size: 96px;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-tertiary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    margin-bottom: 16px;
+    position: relative;
+}
+
+.forecast-year-theme {
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+}
+
+.forecast-year-description {
+    font-size: 16px;
+    color: var(--text-secondary);
+    text-align: center;
+    line-height: 1.8;
+    max-width: 600px;
+    margin: 0 auto 24px;
+}
+
+.forecast-energy-bar {
+    height: 12px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.forecast-energy-fill {
+    height: 100%;
+    border-radius: 6px;
+    transition: width 1s ease;
+}
+
+.forecast-keywords {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.keyword-tag {
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.favorable-days-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.day-card {
+    background: var(--bg-card);
+    border-radius: 12px;
+    padding: 16px;
+    border: 2px solid transparent;
+    transition: all 0.3s;
+}
+
+.day-card.is-today {
+    border-color: var(--accent-primary);
+    background: rgba(99, 102, 241, 0.1);
+}
+
+.day-card.is-tomorrow {
+    border-color: var(--accent-secondary);
+}
+
+.day-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.day-date {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.day-name {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+}
+
+.day-activity {
+    font-size: 14px;
+    color: var(--text-secondary);
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+}
+
+/* ============================================
+   RECOMMENDATIONS WIDGET
+   ============================================ */
+
+.recommendations-widget {
+    background: linear-gradient(135deg, rgba(236, 72, 153, 0.1), rgba(139, 92, 246, 0.1));
+    border-radius: 16px;
+    padding: 24px;
+    margin-top: 24px;
+}
+
+.recommendations-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.recommendation-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.recommendation-icon {
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.recommendation-content {
+    flex: 1;
+}
+
+.recommendation-text {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+.recommendation-action {
+    font-size: 13px;
+    color: var(--accent-primary);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: color 0.2s;
+}
+
+.recommendation-action:hover {
+    color: var(--accent-secondary);
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.5s ease;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+    .practices-premium-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .forecast-year-number {
+        font-size: 64px;
+    }
+    
+    .forecast-year-theme {
+        font-size: 24px;
+    }
+    
+    .plan-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
