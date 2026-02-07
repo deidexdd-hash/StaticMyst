@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MysticNUM Complete - Законченная профессиональная система нумерологического анализа">
+    <title>MysticNUM Complete - Профессиональная Нумерология</title>
+    
+    <!-- Стили -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- Библиотеки -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <!-- Звездный фон -->
+    <div class="stars-bg"></div>
+    
+    <!-- Главный контейнер -->
+    <div class="app-container">
+        
+        <!-- Шапка -->
+        <header class="app-header">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-icon">✨</span>
+                    <h1>MysticNUM <span class="ultimate-badge">COMPLETE</span></h1>
+                </div>
+                <div class="header-subtitle">Законченная профессиональная система • 807+ знаний</div>
+            </div>
+            <div class="export-buttons" id="exportButtons" style="display:none;">
+                <button class="btn-export" onclick="exportManager.exportToPDF()" title="Экспорт в PDF">
+                    📄 PDF
+                </button>
+                <button class="btn-export" onclick="exportManager.exportToJSON()" title="Экспорт данных">
+                    💾 JSON
+                </button>
+            </div>
+        </header>
+
+        <!-- Навигация -->
+        <nav class="main-nav">
+            <button class="nav-tab active" data-tab="matrix">
+                <span class="tab-icon">📊</span>
+                <span class="tab-text">Матрица</span>
+            </button>
+            <button class="nav-tab" data-tab="calculators">
+                <span class="tab-icon">🧮</span>
+                <span class="tab-text">Калькуляторы</span>
+            </button>
+            <button class="nav-tab" data-tab="practices">
+                <span class="tab-icon">🧘</span>
+                <span class="tab-text">Практики</span>
+            </button>
+            <button class="nav-tab" data-tab="plans">
+                <span class="tab-icon">🎯</span>
+                <span class="tab-text">Планы</span>
+            </button>
+            <button class="nav-tab" data-tab="ancestral">
+                <span class="tab-icon">👪</span>
+                <span class="tab-text">Род</span>
+            </button>
+            <button class="nav-tab" data-tab="library">
+                <span class="tab-icon">📚</span>
+                <span class="tab-text">Библиотека</span>
+            </button>
+            <button class="nav-tab" data-tab="forecast">
+                <span class="tab-icon">🔮</span>
+                <span class="tab-text">Прогноз</span>
+            </button>
+        </nav>
+
+        <!-- Контент -->
+        <main class="app-content">
+            
+            <!-- МАТРИЦА -->
+            <section class="tab-content active" id="matrix-tab">
+                <div class="content-grid">
+                    <div class="panel glass-card">
+                        <h2 class="panel-title">📅 Расчет матрицы</h2>
+                        <div class="input-group">
+                            <label>Дата рождения</label>
+                            <input type="text" id="birthDate" class="mystical-input" placeholder="15.05.1992" maxlength="10">
+                        </div>
+                        <div class="input-group">
+                            <label>Пол</label>
+                            <div class="gender-toggle">
+                                <button class="gender-btn active" data-gender="женский">♀ Женский</button>
+                                <button class="gender-btn" data-gender="мужской">♂ Мужской</button>
+                            </div>
+                        </div>
+                        <button class="btn-primary" onclick="app.calculateAll()">
+                            <span>🔮</span> Рассчитать всё
+                        </button>
+                    </div>
+                    
+                    <div class="panel glass-card" id="matrixResults" style="display:none;">
+                        <h2 class="panel-title">🌟 Квадрат Пифагора</h2>
+                        <div id="matrixGrid" class="matrix-grid"></div>
+                        <div id="matrixInterpretations" class="interpretations-section"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- КАЛЬКУЛЯТОРЫ -->
+            <section class="tab-content" id="calculators-tab">
+                <div class="calculators-grid">
+                    <div class="calculator-card glass-card">
+                        <h3>🚗 Номер машины</h3>
+                        <input type="text" id="carNumber" placeholder="A123BC" class="calc-input">
+                        <button onclick="app.calculateCarNumber()">Рассчитать</button>
+                        <div id="carResult" class="calc-result"></div>
+                    </div>
+                    
+                    <div class="calculator-card glass-card">
+                        <h3>🏠 Номер квартиры</h3>
+                        <input type="number" id="flatNumber" placeholder="42" class="calc-input">
+                        <button onclick="app.calculateFlatNumber()">Рассчитать</button>
+                        <div id="flatResult" class="calc-result"></div>
+                    </div>
+                    
+                    <div class="calculator-card glass-card">
+                        <h3>💼 Анализ бизнеса</h3>
+                        <input type="text" id="businessDate" placeholder="01.01.2020" class="calc-input">
+                        <button onclick="app.calculateBusiness()">Рассчитать</button>
+                        <div id="businessResult" class="calc-result"></div>
+                    </div>
+                    
+                    <div class="calculator-card glass-card">
+                        <h3>💑 Совместимость</h3>
+                        <input type="text" id="partner1Date" placeholder="Дата 1: ДД.ММ.ГГГГ" class="calc-input">
+                        <input type="text" id="partner2Date" placeholder="Дата 2: ДД.ММ.ГГГГ" class="calc-input">
+                        <button onclick="app.calculateCompatibility()">Рассчитать</button>
+                        <div id="compatibilityResult" class="calc-result"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ПРАКТИКИ -->
+            <section class="tab-content" id="practices-tab">
+                <div class="glass-card">
+                    <h2 class="panel-title">🧘 Персональные практики</h2>
+                    <p style="color: rgba(255,255,255,0.7); margin-bottom: 20px;">
+                        После расчета матрицы здесь появятся персонализированные практики для вашего развития
+                    </p>
+                    <div id="practicesContent" class="practices-container"></div>
+                </div>
+            </section>
+
+            <!-- ПЛАНЫ -->
+            <section class="tab-content" id="plans-tab">
+                <div class="glass-card">
+                    <h2 class="panel-title">🎯 Планы развития</h2>
+                    <p style="color: rgba(255,255,255,0.7); margin-bottom: 20px;">
+                        Анализ ментального, физического и эмоционального планов
+                    </p>
+                    <div id="plansContent" class="plans-container"></div>
+                </div>
+            </section>
+
+            <!-- РОД -->
+            <section class="tab-content" id="ancestral-tab">
+                <div class="glass-card">
+                    <h2 class="panel-title">👪 Родовая система</h2>
+                    <p style="color: rgba(255,255,255,0.7); margin-bottom: 20px;">
+                        Анализ родовых программ, сил и задач
+                    </p>
+                    <div id="ancestralContent" class="ancestral-container"></div>
+                </div>
+            </section>
+
+            <!-- БИБЛИОТЕКА -->
+            <section class="tab-content" id="library-tab">
+                <div class="library-panel glass-card">
+                    <h2 class="panel-title">📚 База знаний</h2>
+                    <p style="color: rgba(255,255,255,0.7); margin-bottom: 15px;">
+                        Поиск по 807+ единицам знаний
+                    </p>
+                    <input type="text" id="librarySearch" placeholder="Введите ключевое слово для поиска..." class="search-input">
+                    <div id="libraryResults" class="library-results">
+                        <p style="color: rgba(255,255,255,0.5); text-align: center; padding: 40px;">
+                            Введите минимум 2 символа для начала поиска
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ПРОГНОЗ -->
+            <section class="tab-content" id="forecast-tab">
+                <div class="glass-card">
+                    <h2 class="panel-title">🔮 Персональный прогноз</h2>
+                    <p style="color: rgba(255,255,255,0.7); margin-bottom: 20px;">
+                        Прогноз на текущий год и месяц
+                    </p>
+                    <div id="forecastContent" class="forecast-container"></div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Футер -->
+        <footer style="text-align: center; padding: 30px; color: rgba(255,255,255,0.4); margin-top: 50px;">
+            <p>MysticNUM Complete Edition © 2025</p>
+            <p style="font-size: 12px; margin-top: 10px;">
+                Законченная профессиональная система нумерологического анализа
+            </p>
+        </footer>
+    </div>
+
+    <!-- Модальное окно -->
+    <div id="modal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="modal-close" onclick="app.closeModal()">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Скрипты -->
+    <script src="scripts/knowledge_base.js"></script>
+    <script src="scripts/storage.js"></script>
+    <script src="scripts/export.js"></script>
+    <script src="scripts/calculator.js"></script>
+    <script src="scripts/interpretations.js"></script>
+    <script src="scripts/practices.js"></script>
+    <script src="scripts/ancestral.js"></script>
+    <script src="scripts/forecast.js"></script>
+    <script src="scripts/app.js"></script>
+</body>
+</html>
